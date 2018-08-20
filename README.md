@@ -1,5 +1,5 @@
 # chinese-poetry-djangoshow
-chinese-poetry , show in django using mysql database
+chinese-poetry , show in web using Django framework with mysql database 
 
 1. install the requirements
    pip install -r requirements.txt
