@@ -13,3 +13,4 @@ chinese-poetry , show in django using mysql database
 4. open the URL: http://localhost:8001/admin
 
 5. import the Shijing to mysql db
+![Alt text](djangoshow/images/shijing_admin.jpg?raw=true "诗经后台管理页面")
