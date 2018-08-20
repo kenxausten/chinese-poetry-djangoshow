@@ -122,6 +122,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_PATH = os.path.join(os.path.abspath(BASE_DIR), 'static').replace('\\', '/')
+STATICFILES_DIRS = (
+    STATIC_PATH,
+)
+
+# MEDIA_URL = '/images/'
+# MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'images/')
 
 # 日志配置
 LOGGING = {

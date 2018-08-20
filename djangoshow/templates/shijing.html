@@ -6,18 +6,23 @@
     <body>
         {% if sjs %}
             {% for sj in sjs %}
-                <h1>{{ sj.title }}</h1>
-                <h2>{{ sj.chapter }}</h2>
-                <h3>{{ sj.section }}</h3>
-                <strong>{{ sj.content }}</strong>
+                <div class="shijing">
+                    <h1 class="sj-title">{{ sj.title }}</h1>
+                    <h2>
+                        <span class="sj-chapter">{{ sj.chapter }}</span>
+                        <span class="sj-section">{{ sj.section }}</span>
+                    </h2>
+                    <pre class="sj-content"><p>{{ sj.content }}</p></pre>
+                    <hr align="center" width="60%" />
+                </div>
             {% endfor %}
         {% else %}
-            <strong> 无数据</strong>
+            <strong>无数据</strong>
         {% endif %}
 
         <!-- 分页开始 -->
         <div>
-            <ul class="pagination">
+            <ul class="pagination" style="text-align: center">
             <li><a href="?page=1">首页</a></li>
                 {% if sjs.has_previous %}
                     <li><a href="?page={{ sjs.previous_page_number }}">上一页</a></li>
@@ -37,3 +42,55 @@
         <!-- 分页结束 -->
     </body>
 </html>
+
+<style>
+.shijing{
+    text-align:center;
+    background-color:#c6e0c6;
+    /* background-image: url(background.jpg) */
+    /* border-radius:20px; */
+    /* width:300px; */
+    /* height:350px; */
+    /* margin:auto; */
+    /* position:absolute; */
+    /* top:0; */
+    /* left:0; */
+    /* right:0; */
+    /* bottom:0; */
+}
+
+.sj-title{
+    color:#ff8844;
+    font-size:20pt;
+    display:block;
+}
+
+.sj-chapter{
+    font-weight:bold;
+    color:#ff9955;
+    font-size:15pt;
+}
+
+.sj-section{
+    font-weight:bold;
+    color:#ff9955;
+    font-size:13pt;
+}
+
+.sj-content{
+    text-align:center;
+}
+
+ul{
+    display: inline;
+    white-space: normal;
+    background-image: url('/static/image/logo.jpg')
+}
+
+ul li{
+    padding:10px 20px;
+    display: inline-block;
+    background:pink;
+    white-space: normal;
+}
+</style>
